@@ -591,7 +591,7 @@ medsens <- function(x, rho.by = 0.1, sims = 1000, eps = sqrt(.Machine$double.eps
         } else if(!is.null(cluster)) {
             dta <- merge(m.data, as.data.frame(cluster), sort=FALSE, by="row.names")
             fm <- update(model.m, data=dta)
-            MModel.var.cov <- getvcov(dta, fm, dta[,ncol(dta)])
+            Mmodel.var.cov <- getvcov(dta, fm, dta[,ncol(dta)])
         } else {
             Mmodel.var.cov <- vcov(model.m)
         }
@@ -660,7 +660,7 @@ medsens <- function(x, rho.by = 0.1, sims = 1000, eps = sqrt(.Machine$double.eps
             } else if(!is.null(cluster)) {
                 dta <- merge(y.data, as.data.frame(cluster), sort=FALSE, by="row.names")
                 fm <- update(model.y.update, data=dta)
-                YModel.var.cov <- getvcov(dta, fm, dta[,ncol(dta)])
+                Ymodel.var.cov <- getvcov(dta, fm, dta[,ncol(dta)])
             } else {
                 Ymodel.var.cov <- vcov(model.y.update)
             }
@@ -753,7 +753,7 @@ medsens <- function(x, rho.by = 0.1, sims = 1000, eps = sqrt(.Machine$double.eps
         } else if(!is.null(cluster)) {
             dta <- merge(m.data, as.data.frame(cluster), sort=FALSE, by="row.names")
             fm <- update(model.m, data=dta)
-            MModel.var.cov <- getvcov(dta, fm, dta[,ncol(dta)])
+            Mmodel.var.cov <- getvcov(dta, fm, dta[,ncol(dta)])
         } else {
             Mmodel.var.cov <- vcov(model.m)
         }
@@ -773,7 +773,7 @@ medsens <- function(x, rho.by = 0.1, sims = 1000, eps = sqrt(.Machine$double.eps
         } else if(!is.null(cluster)) {
             dta <- merge(y.data, as.data.frame(cluster), sort=FALSE, by="row.names")
             fm <- update(model.y, data=dta)
-            YModel.var.cov <- getvcov(dta, fm, dta[,ncol(dta)])
+            Ymodel.var.cov <- getvcov(dta, fm, dta[,ncol(dta)])
         } else {
             Ymodel.var.cov <- vcov(model.y)
         }
